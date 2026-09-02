@@ -1,0 +1,5 @@
+# Repository identity. There is no code consumer yet: run_checks.py discovers
+# check files and does not read this file. Keep the format intentionally flat;
+# add fields beyond name/kind only when a real consumer requires them.
+name: tool-template
+kind: tool

@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.DS_Store
+.idea/
+.vscode/
+.agent/
+.claude/
+*.log
+logs/
+state/
+output/
+out/
+
+# Real environment files are never committed. Samples document names only.
+.env
+.env.*
+!.env.sample
+!.env.example

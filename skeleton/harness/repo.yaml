@@ -1,0 +1,5 @@
+# Repository identity. There is no code consumer yet: run_checks.py discovers
+# check files and does not read this file. Add fields beyond name/kind only for
+# a real consumer.
+name: {{tool_name}}
+kind: tool

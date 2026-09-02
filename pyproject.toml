@@ -1,0 +1,26 @@
+[project]
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["python", "cli", "code-generation", "project-template", "scaffolding", "developer-tools", "repository-template"]
+name = "tool-template"
+version = "0.1.0"
+description = "Deterministic repository generator, drift detector, skeleton, and baseline checks"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["tooltemplate*"]
+
+[tool.pytest.ini_options]
+# Run only this repository's tests. Files under skeleton/tests contain {{pkg}}
+# placeholders and are template data rather than executable tests here.
+testpaths = ["tests"]
+
+[project.urls]
+Repository = "https://github.com/abetor/template"
+Documentation = "https://github.com/abetor/template#readme"
+Issues = "https://github.com/abetor/template/issues"

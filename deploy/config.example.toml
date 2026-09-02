@@ -1,0 +1,43 @@
+# Shared local tools-data configuration. Copy it to $TOOLS_DATA/config.toml
+# or the documented default at ~/tools-data/config.toml.
+# This file contains no secrets: env lists variable names, not values.
+# A launchd unit must provide a PATH containing nvm-bin and Python 3.11+.
+schema_version = 1
+
+[paths]
+vault = "~/life-os-vault"
+topics_root = "~/tools-data/llm-wiki-data/topics"
+sources_root = "~/tools-data/llm-wiki-data/sources"
+
+[harness.claude]
+argv = ["claude"]
+
+[harness.codex]
+argv = ["codex"]
+
+[tools.researcher]
+argv = ["python3", "-m", "researcher"]
+cwd = "~/src/tool-researcher"
+env = ["GITHUB_TOKEN", "RESEARCHER_WEB_BACKEND", "RESEARCHER_SEARXNG_URL", "EXA_API_KEY"]
+
+[tools.coursedump]
+argv = ["uv", "run", "coursedump"]
+cwd = "~/src/tool-coursedump"
+env = ["COURSEDUMP_DATA"]
+
+[tools.llmwiki]
+argv = ["python3", "-m", "llmwiki"]
+cwd = "~/src/tool-llm-wiki"
+
+[tools.scheduler]
+argv = ["python3", "-m", "tool_scheduler"]
+cwd = "~/src/tool-scheduler"
+
+[tools.gateway]
+argv = ["python3", "-m", "tool_gateway"]
+cwd = "~/src/tool-gateway"
+env = ["GATEWAY_TOKEN", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "LINEAR_API_KEY"]
+
+[tools.lifeos]
+argv = ["python3", "-m", "tool_life_os_runtime"]
+cwd = "~/src/tool-life-os-runtime"
