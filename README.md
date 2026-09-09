@@ -1,5 +1,7 @@
 # template
 
+[![Tests](https://github.com/abetor/template/actions/workflows/tests.yml/badge.svg)](https://github.com/abetor/template/actions/workflows/tests.yml)
+
 `template` creates self-contained Python tool repositories and detects drift between
 generated repositories and the current template. It is intended for teams that want a
 repeatable repository shape without turning generated projects into permanently coupled
