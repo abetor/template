@@ -1,6 +1,6 @@
-# tool-template
+# template
 
-`tool-template` creates self-contained Python tool repositories and detects drift between
+`template` creates self-contained Python tool repositories and detects drift between
 generated repositories and the current template. It is intended for teams that want a
 repeatable repository shape without turning generated projects into permanently coupled
 framework clients.
@@ -14,7 +14,7 @@ to shared adapters, repository checks, and data-boundary rules never reach exist
 projects, while copying an entire framework into every repository makes future comparison
 ambiguous.
 
-`tool-template` makes repository creation a deterministic function of the committed
+`template` makes repository creation a deterministic function of the committed
 `skeleton/` tree and explicit parameters. Existing projects can then be regenerated in a
 temporary directory and compared byte for byte with the template-owned files.
 
@@ -52,7 +52,9 @@ See [docs/DESIGN.md](docs/DESIGN.md) for the detailed contracts and design decis
 
 Requirements: Python 3.11 or newer and Git. Run from a Git checkout with
 an editable installation: generation reads the indexed `skeleton/` and
-repository-owned harness assets. A standalone wheel is not a supported setup.
+repository-owned harness assets. A standalone wheel is not a supported setup. The
+repository is `template`, the distribution is `tool-template`, and the Python package is
+`tooltemplate`.
 
 ```bash
 python3 -m venv .venv
@@ -120,7 +122,6 @@ variable names, not credential values. Secrets remain in the process environment
   provider calls.
 - The generated CLI is a scaffold. A child repository must add and test its own domain
   commands.
-- No Cyrillic test fixtures are required by this repository; the public tree is English.
 
 ## Tests
 
@@ -134,6 +135,11 @@ python3 harness/run_checks.py --repo-root .
 
 For an end-to-end acceptance check, create a child under a temporary directory, run the
 child's tests and baseline checks, and verify `tooltemplate diff` reports `in-sync`.
+
+## Provenance
+
+This repository began as a public source snapshot of a personal tool. Earlier local development
+history is not included.
 
 ## License
 
